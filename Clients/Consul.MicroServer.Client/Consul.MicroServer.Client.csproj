@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="WebApiClientCore" Version="1.1.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\MicroService\UserService\Consul.MicroService.UserService.Interfaces\Consul.MicroService.UserService.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>

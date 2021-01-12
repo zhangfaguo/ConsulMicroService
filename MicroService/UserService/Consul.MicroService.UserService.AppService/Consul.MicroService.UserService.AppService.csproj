@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Cores\Zfg.Core\Zfg.Core.csproj" />
+    <ProjectReference Include="..\Consul.MicroService.UserService.AppService.Contract\Consul.MicroService.UserService.AppService.Contract.csproj" />
+    <ProjectReference Include="..\Consul.MicroService.UserService.Domain\Consul.MicroService.UserService.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

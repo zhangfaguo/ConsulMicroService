@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.1.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.1" NoWarn="NU1605" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.1" NoWarn="NU1605" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="5.0.0-alpha.2" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Cores\Zfg.Consul\Zfg.Consul.csproj" />
+    <ProjectReference Include="..\..\..\Cores\Zfg.Core.Application\Zfg.Core.Application.csproj" />
+    <ProjectReference Include="..\..\..\Cores\Zfg.Core.Db\Zfg.Core.Db.csproj" />
+    <ProjectReference Include="..\..\..\Cores\Zfg.Core\Zfg.Core.csproj" />
+    <ProjectReference Include="..\..\..\Cores\Zfg.Libraries\Zfg.Libraries.csproj" />
+    <ProjectReference Include="..\Consul.MicroService.UserService.AppService.Contract\Consul.MicroService.UserService.AppService.Contract.csproj" />
+    <ProjectReference Include="..\Consul.MicroService.UserService.AppService\Consul.MicroService.UserService.AppService.csproj" />
+    <ProjectReference Include="..\Consul.MicroService.UserService.Domain\Consul.MicroService.UserService.Domain.csproj" />
+  </ItemGroup>
+
+</Project>
