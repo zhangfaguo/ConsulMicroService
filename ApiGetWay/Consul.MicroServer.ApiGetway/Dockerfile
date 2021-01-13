@@ -1,10 +1,10 @@
 #See https://aka.ms/containerfastmode to understand how Visual Studio uses this Dockerfile to build your images for faster debugging.
 
-FROM mcr.microsoft.com/dotnet/aspnet AS base
+FROM registry.cn-hangzhou.aliyuncs.com/dotnetcn/aspnet:5.0-buster-slim AS base
 WORKDIR /app
 EXPOSE 80
 
-FROM mcr.microsoft.com/dotnet/sdk AS build
+FROM registry.cn-hangzhou.aliyuncs.com/zjueva/dotnet-sdk-5.0:0.0.1 AS build
 WORKDIR /src
 COPY ["ApiGetWay/Consul.MicroServer.ApiGetway/Consul.MicroServer.ApiGetway.csproj", "ApiGetWay/Consul.MicroServer.ApiGetway/"]
 RUN dotnet restore "ApiGetWay/Consul.MicroServer.ApiGetway/Consul.MicroServer.ApiGetway.csproj"
