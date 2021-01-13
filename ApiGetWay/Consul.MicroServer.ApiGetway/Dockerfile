@@ -2,7 +2,7 @@
 
 FROM registry.cn-hangzhou.aliyuncs.com/dotnetcn/aspnet:5.0-buster-slim AS base
 WORKDIR /app
-EXPOSE 5000
+EXPOSE 80
 
 FROM registry.cn-hangzhou.aliyuncs.com/zjueva/dotnet-sdk-5.0:0.0.1 AS build
 WORKDIR /src
