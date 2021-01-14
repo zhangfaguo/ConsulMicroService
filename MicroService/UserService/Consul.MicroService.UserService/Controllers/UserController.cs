@@ -1,5 +1,6 @@
 ﻿using Consul.MicroService.UserService.AppService.Contract;
 using Microsoft.AspNetCore.Mvc;
+using System.Net;
 
 namespace Consul.MicroService.UserService.Controllers
 {
@@ -19,14 +20,14 @@ namespace Consul.MicroService.UserService.Controllers
         [HttpGet("index")]
         public dynamic Index()
         {
-            return "1233";
+            return Dns.GetHostName();
         }
 
 
         [HttpGet("get")]
         public dynamic Get()
         {
-            return "1233";
+            return Dns.GetHostName();
         }
 
     }

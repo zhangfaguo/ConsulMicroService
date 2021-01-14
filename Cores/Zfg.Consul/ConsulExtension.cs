@@ -48,6 +48,8 @@ namespace Zfg.Consul
 
                 IConsulClient consul = app.ApplicationServices.GetRequiredService<IConsulClient>();
                 var appLife = app.ApplicationServices.GetRequiredService<IHostApplicationLifetime>();
+                Console.WriteLine($"ClientPort:{consulCfg.ClientPort}");
+                Console.WriteLine($"ClientIp:{consulCfg.ClientIp}");
                 //register localhost address
                 //注册本地地址
                 var localhostregistration = new AgentServiceRegistration()
@@ -59,7 +61,7 @@ namespace Zfg.Consul
                         HTTP = $"{Uri.UriSchemeHttp}://{consulCfg.ClientIp}:{consulCfg.ClientPort}/HealthCheck",
                     } },
                     Address = consulCfg.ClientIp,
-                    ID = $"{consulCfg.ServerName}-{consulCfg.ClientIp}",
+                    ID = $"{consulCfg.ServerName}-{consulCfg.ClientIp}-{consulCfg.ClientPort}",
                     Name = consulCfg.ServerName,
                     Port = consulCfg.ClientPort
                 };

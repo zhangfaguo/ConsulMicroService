@@ -8,11 +8,9 @@
       "Port": 8500,
       "Type": "Consul",
       "PollingInterval": 100
+    },
+    "LoadBalancerOptions": {
+      "Type": "RoundRobin"
     }
-
-  },
-  "AuthenticationOptions": {
-    "AuthenticationProviderKey": "",
-    "AllowedScopes": []
   }
 }
