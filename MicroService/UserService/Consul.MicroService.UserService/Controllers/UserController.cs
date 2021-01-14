@@ -24,10 +24,10 @@ namespace Consul.MicroService.UserService.Controllers
         }
 
 
-        [HttpGet("get")]
-        public dynamic Get()
+        [HttpGet("search")]
+        public dynamic Get(int id)
         {
-            return Dns.GetHostName();
+            return AppUser.GetUser(id);
         }
 
     }
