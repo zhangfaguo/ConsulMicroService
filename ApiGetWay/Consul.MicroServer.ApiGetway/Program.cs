@@ -22,6 +22,7 @@ namespace Consul.MicroServer.ApiGetway
                 {
                     builer.SetBasePath(hostingContext.HostingEnvironment.ContentRootPath);
                     builer.AddJsonFile("ocelot.json");
+                    builer.AddCommandLine(args);
                 })
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
