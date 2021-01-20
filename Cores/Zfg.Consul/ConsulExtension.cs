@@ -51,14 +51,17 @@ namespace Zfg.Consul
                 Console.WriteLine($"ClientPort:{consulCfg.ClientPort}");
                 Console.WriteLine($"ClientIp:{consulCfg.ClientIp}");
                 //register localhost address
+                var scaml = consulCfg.RequireHttps ? "https" : "http";
                 //注册本地地址
                 var localhostregistration = new AgentServiceRegistration()
                 {
+
                     Checks = new[] { new AgentServiceCheck()
                     {
                         DeregisterCriticalServiceAfter = TimeSpan.FromMinutes(1),
                         Interval = TimeSpan.FromSeconds(30),
-                        HTTP = $"{Uri.UriSchemeHttp}://{consulCfg.ClientIp}:{consulCfg.ClientPort}/HealthCheck",
+                     
+                        HTTP = $"{scaml}://{consulCfg.ClientIp}:{consulCfg.ClientPort}/HealthCheck",
                     } },
                     Address = consulCfg.ClientIp,
                     ID = $"{consulCfg.ServerName}-{consulCfg.ClientIp}-{consulCfg.ClientPort}",

@@ -38,5 +38,8 @@ namespace Zfg.Consul
         /// 服务注册端口
         /// </summary>
         public int ClientPort { get; set; }
+
+
+        public bool RequireHttps { get; set; } = false;
     }
 }

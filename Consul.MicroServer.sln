@@ -41,7 +41,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.MicroServer.Client",
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Redis", "Redis", "{82D6D144-31E7-4A62-A328-AD68FAEB41EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zfg.Core.Redis", "Cores\Zfg.Core.Redis\Zfg.Core.Redis.csproj", "{E6F9EEEB-FADA-46EC-AF48-1353DF3AC755}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Zfg.Core.Redis", "Cores\Zfg.Core.Redis\Zfg.Core.Redis.csproj", "{E6F9EEEB-FADA-46EC-AF48-1353DF3AC755}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IdentityService", "IdentityService", "{7F9F5F8D-CD1C-49CE-A217-F25DEE482DDA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.MicroService.IdentityService", "MicroService\IdentityService\Consul.MicroService.IdentityService\Consul.MicroService.IdentityService.csproj", "{680F12B3-1C7E-4356-8719-6A7AF97FB57F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.MicrosServer.Console", "Clients\Consul.MicrosServer.Console\Consul.MicrosServer.Console.csproj", "{0117ABB9-08CB-4FCD-902B-BD7F41199E38}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +111,14 @@ Global
 		{E6F9EEEB-FADA-46EC-AF48-1353DF3AC755}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E6F9EEEB-FADA-46EC-AF48-1353DF3AC755}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E6F9EEEB-FADA-46EC-AF48-1353DF3AC755}.Release|Any CPU.Build.0 = Release|Any CPU
+		{680F12B3-1C7E-4356-8719-6A7AF97FB57F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{680F12B3-1C7E-4356-8719-6A7AF97FB57F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{680F12B3-1C7E-4356-8719-6A7AF97FB57F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{680F12B3-1C7E-4356-8719-6A7AF97FB57F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0117ABB9-08CB-4FCD-902B-BD7F41199E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0117ABB9-08CB-4FCD-902B-BD7F41199E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0117ABB9-08CB-4FCD-902B-BD7F41199E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0117ABB9-08CB-4FCD-902B-BD7F41199E38}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -126,6 +140,9 @@ Global
 		{DAA04353-7401-40E4-B317-3CA06C94B8E4} = {FB2332C5-C87F-4798-9323-8672ED8C8ED8}
 		{82D6D144-31E7-4A62-A328-AD68FAEB41EB} = {AC80BD86-E4DE-4136-82C1-C543DCB467E6}
 		{E6F9EEEB-FADA-46EC-AF48-1353DF3AC755} = {82D6D144-31E7-4A62-A328-AD68FAEB41EB}
+		{7F9F5F8D-CD1C-49CE-A217-F25DEE482DDA} = {AACA706B-DC3F-4BA3-9FDE-6AFEC3F60D23}
+		{680F12B3-1C7E-4356-8719-6A7AF97FB57F} = {7F9F5F8D-CD1C-49CE-A217-F25DEE482DDA}
+		{0117ABB9-08CB-4FCD-902B-BD7F41199E38} = {FB2332C5-C87F-4798-9323-8672ED8C8ED8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B67059D-74B4-4B55-B357-51E687F53587}
