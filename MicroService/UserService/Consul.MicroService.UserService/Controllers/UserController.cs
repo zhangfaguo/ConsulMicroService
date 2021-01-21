@@ -17,7 +17,7 @@ namespace Consul.MicroService.UserService.Controllers
             AppUser = appUser;
         }
 
-       [Authorize]
+        [Authorize("ApiScope")]
         [HttpGet("index")]
         public dynamic Index()
         {

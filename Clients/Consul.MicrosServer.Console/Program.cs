@@ -51,7 +51,7 @@ namespace Consul.MicrosServer.Consoles
                 var apiClient = new HttpClient();
                 apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-                var response = await apiClient.GetAsync("http://localhost:5001/userservice/user/index");
+                var response = await apiClient.GetAsync("http://localhost:6001/user/index");
                 if (!response.IsSuccessStatusCode)
                 {
                     Console.WriteLine(response.StatusCode);
