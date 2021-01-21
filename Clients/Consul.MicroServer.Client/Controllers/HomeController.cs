@@ -1,5 +1,6 @@
 ﻿using Consul.MicroServer.Client.Models;
 using Consul.MicroService.UserService.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -15,16 +16,16 @@ namespace Consul.MicroServer.Client.Controllers
         private readonly ILogger<HomeController> _logger;
 
         private IUser AppUser { get; }
-        public HomeController(ILogger<HomeController> logger, IUser appUser)
+        public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
-            AppUser = appUser;
+          //  AppUser = appUser;
         }
 
+        [Authorize]
         public async Task<IActionResult> Index()
         {
-            var t = await AppUser.Index();
-            return Content(t);
+            return await Task.FromResult(Content("12333"));
         }
 
         public IActionResult Privacy()
