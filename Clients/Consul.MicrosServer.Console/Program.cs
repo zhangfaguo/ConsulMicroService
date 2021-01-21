@@ -15,7 +15,7 @@ namespace Consul.MicrosServer.Consoles
             var client = new HttpClient();
             var request = new DiscoveryDocumentRequest
             {
-                Address = "http://192.168.1.60:4002/",
+                Address = "http://u.ke.me/",
                 Policy =
                 {
                        RequireHttps =false

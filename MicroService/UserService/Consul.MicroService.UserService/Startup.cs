@@ -93,7 +93,7 @@ namespace Consul.MicroService.UserService
             services.AddAuthentication("Bearer")
                  .AddJwtBearer("Bearer", options =>
                  {
-                     options.Authority = "http://192.168.1.60:4002";
+                     options.Authority = "http://u.ke.me";
                      options.RequireHttpsMetadata = false;
                      options.TokenValidationParameters = new TokenValidationParameters
                      {
