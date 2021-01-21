@@ -62,6 +62,7 @@ namespace Consul.MicroService.IdentityService
                      .AddDeveloperSigningCredential();
             services.AddControllersWithViews();
             services.AddAuthentication();
+            services.AddConsul(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -117,6 +118,8 @@ namespace Consul.MicroService.IdentityService
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapRazorPages();
             });
+
+            app.UseConsul(Configuration);
 
         }
     }

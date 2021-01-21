@@ -15,11 +15,11 @@ namespace Consul.MicrosServer.Consoles
             var client = new HttpClient();
             var request = new DiscoveryDocumentRequest
             {
-                Address = "http://192.168.1.60:7001",
+                Address = "http://192.168.1.60:4002/",
                 Policy =
-            {
-                RequireHttps =false
-            }
+                {
+                       RequireHttps =false
+                }
             };
             var disco = await client.GetDiscoveryDocumentAsync(request);
             if (disco.IsError)
@@ -51,7 +51,7 @@ namespace Consul.MicrosServer.Consoles
                 var apiClient = new HttpClient();
                 apiClient.SetBearerToken(tokenResponse.AccessToken);
 
-                var response = await apiClient.GetAsync("http://localhost:6001/user/index");
+                var response = await apiClient.GetAsync("http://localhost:5000/userservice/user/index");
                 if (!response.IsSuccessStatusCode)
                 {
                     Console.WriteLine(response.StatusCode);

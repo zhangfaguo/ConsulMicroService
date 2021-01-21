@@ -60,22 +60,25 @@ namespace Zfg.Consul
                     {
                         DeregisterCriticalServiceAfter = TimeSpan.FromMinutes(1),
                         Interval = TimeSpan.FromSeconds(30),
-                     
                         HTTP = $"{scaml}://{consulCfg.ClientIp}:{consulCfg.ClientPort}/HealthCheck",
                     } },
                     Address = consulCfg.ClientIp,
                     ID = $"{consulCfg.ServerName}-{consulCfg.ClientIp}-{consulCfg.ClientPort}",
                     Name = consulCfg.ServerName,
-                    Port = consulCfg.ClientPort
+                    Port = consulCfg.ClientPort,
+
+
                 };
 
                 consul.Agent.ServiceRegister(localhostregistration).GetAwaiter().GetResult();
-
+                var key = $"upstreams/{consulCfg.ServerName}/{consulCfg.ClientIp}:{consulCfg.ClientPort}".ToLower();
+                consul.KV.Put(new KVPair(key));
                 ////send consul request after service stop
                 ////当服务停止后想consul发送的请求
                 appLife.ApplicationStopping.Register(() =>
                 {
                     consul.Agent.ServiceDeregister(localhostregistration.ID).GetAwaiter().GetResult();
+                    consul.KV.Delete(key);
                 });
 
                 app.Map("/HealthCheck", s =>
@@ -87,7 +90,7 @@ namespace Zfg.Consul
                 });
             }
 
-            
+
             return app;
         }
 
