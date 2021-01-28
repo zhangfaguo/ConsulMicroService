@@ -15,6 +15,8 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\Cores\Zfg.Consul\Zfg.Consul.csproj" />
+    <ProjectReference Include="..\..\Cores\Zfg.EventBus.Cap\Zfg.Core.EventBus.Cap.csproj" />
+    <ProjectReference Include="..\..\Cores\Zfg.EventBus\Zfg.Core.EventBus.csproj" />
     <ProjectReference Include="..\..\MicroService\UserService\Consul.MicroService.UserService.Interfaces\Consul.MicroService.UserService.Interfaces.csproj" />
   </ItemGroup>
 

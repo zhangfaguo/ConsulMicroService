@@ -20,6 +20,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UserService", "UserService", "{4BD509D4-D590-4F5D-9058-6C1ED3F2C299}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.MicroService.UserService", "MicroService\UserService\Consul.MicroService.UserService\Consul.MicroService.UserService.csproj", "{B6E17EBA-2840-4F79-BAB3-76F796A932C0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{191D8B5B-BB01-4201-A8A9-8653DA1219B6} = {191D8B5B-BB01-4201-A8A9-8653DA1219B6}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.MicroService.UserService.Interfaces", "MicroService\UserService\Consul.MicroService.UserService.Interfaces\Consul.MicroService.UserService.Interfaces.csproj", "{FBB4A95C-4178-4B57-BE8A-7F3ED05BEA27}"
 EndProject
@@ -48,6 +51,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.MicroService.IdentityService", "MicroService\IdentityService\Consul.MicroService.IdentityService\Consul.MicroService.IdentityService.csproj", "{680F12B3-1C7E-4356-8719-6A7AF97FB57F}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Consul.MicrosServer.Console", "Clients\Consul.MicrosServer.Console\Consul.MicrosServer.Console.csproj", "{0117ABB9-08CB-4FCD-902B-BD7F41199E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zfg.Core.EventBus", "Cores\Zfg.EventBus\Zfg.Core.EventBus.csproj", "{072E82AE-FB08-4AEF-852D-E19C58C0B200}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EventBus", "EventBus", "{46C780FE-7045-4BCA-8B12-4D7D3765A3AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Zfg.Core.EventBus.Cap", "Cores\Zfg.EventBus.Cap\Zfg.Core.EventBus.Cap.csproj", "{6CDFAAD4-BB70-43A9-BA61-0E08543972EA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -119,6 +128,14 @@ Global
 		{0117ABB9-08CB-4FCD-902B-BD7F41199E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0117ABB9-08CB-4FCD-902B-BD7F41199E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0117ABB9-08CB-4FCD-902B-BD7F41199E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{072E82AE-FB08-4AEF-852D-E19C58C0B200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{072E82AE-FB08-4AEF-852D-E19C58C0B200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{072E82AE-FB08-4AEF-852D-E19C58C0B200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{072E82AE-FB08-4AEF-852D-E19C58C0B200}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CDFAAD4-BB70-43A9-BA61-0E08543972EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CDFAAD4-BB70-43A9-BA61-0E08543972EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CDFAAD4-BB70-43A9-BA61-0E08543972EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CDFAAD4-BB70-43A9-BA61-0E08543972EA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -143,6 +160,9 @@ Global
 		{7F9F5F8D-CD1C-49CE-A217-F25DEE482DDA} = {AACA706B-DC3F-4BA3-9FDE-6AFEC3F60D23}
 		{680F12B3-1C7E-4356-8719-6A7AF97FB57F} = {7F9F5F8D-CD1C-49CE-A217-F25DEE482DDA}
 		{0117ABB9-08CB-4FCD-902B-BD7F41199E38} = {FB2332C5-C87F-4798-9323-8672ED8C8ED8}
+		{072E82AE-FB08-4AEF-852D-E19C58C0B200} = {AC80BD86-E4DE-4136-82C1-C543DCB467E6}
+		{46C780FE-7045-4BCA-8B12-4D7D3765A3AC} = {AC80BD86-E4DE-4136-82C1-C543DCB467E6}
+		{6CDFAAD4-BB70-43A9-BA61-0E08543972EA} = {46C780FE-7045-4BCA-8B12-4D7D3765A3AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4B67059D-74B4-4B55-B357-51E687F53587}

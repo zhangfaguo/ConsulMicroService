@@ -45,7 +45,6 @@ namespace Zfg.Consul
             var consulCfg = GetConfig(configuration);
             if (consulCfg?.Enable == true)
             {
-
                 IConsulClient consul = app.ApplicationServices.GetRequiredService<IConsulClient>();
                 var appLife = app.ApplicationServices.GetRequiredService<IHostApplicationLifetime>();
                 Console.WriteLine($"ClientPort:{consulCfg.ClientPort}");

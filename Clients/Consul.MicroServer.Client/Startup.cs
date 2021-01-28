@@ -13,6 +13,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Zfg.Consul;
+using Zfg.Core;
 
 namespace Consul.MicroServer.Client
 {
@@ -30,6 +31,7 @@ namespace Consul.MicroServer.Client
         {
             services.AddControllersWithViews();
 
+          
             JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
          
             services.AddAuthentication(options =>
@@ -80,7 +82,6 @@ namespace Consul.MicroServer.Client
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
@@ -88,6 +89,7 @@ namespace Consul.MicroServer.Client
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
             app.UseConsul(Configuration);
+
         }
     }
 }

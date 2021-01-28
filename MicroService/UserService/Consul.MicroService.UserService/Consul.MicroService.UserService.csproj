@@ -25,6 +25,8 @@
     <ProjectReference Include="..\..\..\Cores\Zfg.Core.Application\Zfg.Core.Application.csproj" />
     <ProjectReference Include="..\..\..\Cores\Zfg.Core.Db\Zfg.Core.Db.csproj" />
     <ProjectReference Include="..\..\..\Cores\Zfg.Core\Zfg.Core.csproj" />
+    <ProjectReference Include="..\..\..\Cores\Zfg.EventBus.Cap\Zfg.Core.EventBus.Cap.csproj" />
+    <ProjectReference Include="..\..\..\Cores\Zfg.EventBus\Zfg.Core.EventBus.csproj" />
     <ProjectReference Include="..\..\..\Cores\Zfg.Libraries\Zfg.Libraries.csproj" />
     <ProjectReference Include="..\Consul.MicroService.UserService.AppService.Contract\Consul.MicroService.UserService.AppService.Contract.csproj" />
     <ProjectReference Include="..\Consul.MicroService.UserService.AppService\Consul.MicroService.UserService.AppService.csproj" />

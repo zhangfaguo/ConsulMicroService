@@ -44,15 +44,15 @@ namespace Consul.MicroService.UserService
                            .UseRepository();
             Engine.Instance.Register<IConfiguration, IConfiguration>(() => Configuration, lift: LiftTime.Single);
 
-            Engine.Instance.Register<DbContextOptions<EfContent>, DbContextOptions>(() =>
-            {
-                var builder = new DbContextOptionsBuilder<EfContent>();
-                var conntectString = Configuration.GetConnectionString("content");
-                builder.UseMySql(conntectString, ServerVersion.AutoDetect(conntectString));
-                return builder.Options;
-            }, lift: LiftTime.Single);
+            //Engine.Instance.Register<DbContextOptions<EfContent>, DbContextOptions>(() =>
+            //{
+            //    var builder = new DbContextOptionsBuilder<EfContent>();
+            //    var conntectString = Configuration.GetConnectionString("content");
+            //    builder.UseMySql(conntectString, ServerVersion.AutoDetect(conntectString));
+            //    return builder.Options;
+            //}, lift: LiftTime.Single);
 
-            Engine.Instance.RegisterType<EfContent, DbContext>();
+            //Engine.Instance.RegisterType<EfContent, DbContext>();
 
             container.RegisterBuildCallback(lifeScope =>
             {
@@ -66,13 +66,17 @@ namespace Consul.MicroService.UserService
             JwtSecurityTokenHandler.DefaultMapInboundClaims = false;
             var basePath = AppDomain.CurrentDomain.BaseDirectory;
             LogManager.Configuration = new XmlLoggingConfiguration(basePath + "nlog.config");
-            services.AddDbContext<EfContent>((cfg) =>
-            {
-                var conntectString = Configuration.GetConnectionString("content");
-                cfg.UseMySql(conntectString, ServerVersion.AutoDetect(conntectString));
-            });
+            services.AddDbContext<DbContext, EfContent>((cfg) =>
+             {
+                 var conntectString = Configuration.GetConnectionString("content");
+                 cfg.UseMySql(conntectString, ServerVersion.AutoDetect(conntectString));
+             });
             services.AddConsul(Configuration);
             services.AddControllers();
+            services.AddEventBus(buider =>
+            {
+                buider.UseCap<DbContext>(Configuration);
+            });
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "Consul.MicroService.UserService", Version = "v1" });
@@ -98,7 +102,7 @@ namespace Consul.MicroService.UserService
                      options.TokenValidationParameters = new TokenValidationParameters
                      {
                          ValidateAudience = false,
-                         ValidateIssuer=false,
+                         ValidateIssuer = false,
                      };
                  });
 

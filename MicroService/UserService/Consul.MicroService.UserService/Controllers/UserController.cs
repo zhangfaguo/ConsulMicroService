@@ -1,7 +1,11 @@
 ﻿using Consul.MicroService.UserService.AppService.Contract;
+using Consul.MicroService.UserService.AppService.Contract.Model;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.DependencyInjection;
+using System;
 using System.Net;
+using Zfg.Core.EventBus;
 
 namespace Consul.MicroService.UserService.Controllers
 {
@@ -29,7 +33,16 @@ namespace Consul.MicroService.UserService.Controllers
         [HttpGet("search")]
         public dynamic Get(int id)
         {
-            return AppUser.GetUser(id);
+            var user = AppUser.GetUser(id);
+            HttpContext.RequestServices.GetRequiredService<IPublish>().Publish("user.show", user);
+            return user;
+        }
+
+        [NonAction]
+        [Subscribe("user.show")]
+        public void Sub(UserModel user)
+        {
+            Console.WriteLine(user);
         }
 
     }
